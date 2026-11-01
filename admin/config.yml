@@ -2,13 +2,13 @@
 # Netlify redeploys the site automatically after each save.
 backend:
   name: github
-  repo: mahmoudshabaka535/dr-mahmoud-shabaka
+  repo: drshabaka/drshabaka.github.io
   branch: main
 
   base_url: https://api.netlify.com
   site_domain: dr-mahmoud-shabaka.netlify.app
-site_url: https://mahmoudshabaka535.github.io/dr-mahmoud-shabaka/
-display_url: https://mahmoudshabaka535.github.io/dr-mahmoud-shabaka/
+site_url: https://drshabaka.github.io/
+display_url: https://drshabaka.github.io/
 media_folder: img/uploads
 public_folder: img/uploads
 
