@@ -1,0 +1,52 @@
+{
+  "jobs": [
+    {
+      "title": "Intern Year",
+      "where": "Horus University · Mansoura University · Aga Hospital",
+      "when": "2024 – 2025",
+      "points": [
+        "Horus University (6 months): practiced in all dental specialties, with a 2-month focus on endodontics.",
+        "Completed 17 root canal treatments, fully documented with personal clinical photography.",
+        "Performed numerous oral surgery procedures and multiple esthetic restorative cases.",
+        "Mansoura University: pedodontics, endodontics and restorative. Aga Hospital: surgery and endodontics."
+      ]
+    },
+    {
+      "title": "Dentist",
+      "where": "Dr. Mostafa Askrya, Midtown Clinic",
+      "when": "1 year",
+      "points": ["One year of clinical experience on a percentage-based system."]
+    },
+    {
+      "title": "Surgery Training",
+      "where": "Kasr Al-Ainy Hospital, Cairo University",
+      "when": "1 month",
+      "points": [
+        "Performed approximately 37 tooth extractions.",
+        "Managed 3 impacted wisdom tooth cases.",
+        "Assisted as first assistant in various surgical procedures."
+      ]
+    },
+    {
+      "title": "Endodontic Training",
+      "where": "Summer internship · Dr. Ahmed Swilam",
+      "when": "2024 – 2025 · 1.5 months",
+      "points": ["Hands-on endodontic training under supervision."]
+    },
+    {
+      "title": "Prosthodontics Training",
+      "where": "Dr. Muhammed El Qenawy Clinic, Mansoura",
+      "when": "2023 – 2024 · 3 months",
+      "points": [
+        "Supervised clinical training in prosthodontics under Dr. Abdullah Safaa.",
+        "Fixed and removable prosthodontics, treatment planning, impressions, temporization, crown and bridge preparation, and patient management."
+      ]
+    },
+    {
+      "title": "Summer Internship",
+      "where": "Dr. Ahmed Maher Dental Clinic, Mansoura",
+      "when": "2023 – 2024",
+      "points": ["Summer clinical internship."]
+    }
+  ]
+}

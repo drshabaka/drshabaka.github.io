@@ -1,0 +1,63 @@
+# Decap CMS: edits data/*.json and uploads images, committing straight to GitHub.
+# Netlify redeploys the site automatically after each save.
+backend:
+  name: github
+  repo: mahmoudshabaka535/dr-mahmoud-shabaka
+  branch: main
+
+site_url: https://dr-mahmoud-shabaka.netlify.app
+display_url: https://dr-mahmoud-shabaka.netlify.app
+media_folder: img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: content
+    label: Site content
+    files:
+      - name: cases
+        label: Clinical cases
+        file: data/cases.json
+        fields:
+          - name: cases
+            label: Cases
+            label_singular: Case
+            widget: list
+            summary: "{{fields.title}} ({{fields.type}})"
+            fields:
+              - { name: title, label: Title, widget: string, hint: "e.g. Root canal treatment" }
+              - name: type
+                label: Type
+                widget: select
+                options:
+                  - { label: Endodontics, value: endo }
+                  - { label: Restorative, value: resto }
+                  - { label: Oral surgery, value: surgery }
+              - { name: note, label: Short note, widget: string, required: false, hint: "Optional, e.g. With after-healing X-ray" }
+              - { name: image, label: Photo, widget: image, hint: "One image of the case (a collage works best)" }
+
+      - name: experience
+        label: Clinical experience
+        file: data/experience.json
+        fields:
+          - name: jobs
+            label: Experience
+            label_singular: Position
+            widget: list
+            summary: "{{fields.title}} · {{fields.where}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: where, label: Where, widget: string }
+              - { name: when, label: When, widget: string, hint: "e.g. 2024 – 2025 · 3 months" }
+              - { name: points, label: Details, widget: list, field: { name: point, label: Point, widget: string } }
+
+      - name: settings
+        label: Contact & numbers
+        file: data/settings.json
+        fields:
+          - { name: phone, label: Phone, widget: string }
+          - { name: whatsapp, label: WhatsApp number, widget: string, hint: "Digits only with country code, e.g. 201127027744" }
+          - { name: email, label: Email, widget: string }
+          - { name: location, label: Location, widget: string }
+          - { name: root_canals, label: Root canal cases, widget: number, value_type: int }
+          - { name: extractions, label: Tooth extractions, widget: number, value_type: int }
+          - { name: gpa, label: GPA, widget: number, value_type: float, step: 0.1 }
