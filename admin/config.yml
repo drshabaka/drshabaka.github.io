@@ -5,10 +5,12 @@ backend:
   repo: mahmoudshabaka535/dr-mahmoud-shabaka
   branch: main
 
-site_url: https://dr-mahmoud-shabaka.netlify.app
-display_url: https://dr-mahmoud-shabaka.netlify.app
+  base_url: https://api.netlify.com
+  site_domain: dr-mahmoud-shabaka.netlify.app
+site_url: https://mahmoudshabaka535.github.io/dr-mahmoud-shabaka/
+display_url: https://mahmoudshabaka535.github.io/dr-mahmoud-shabaka/
 media_folder: img/uploads
-public_folder: /img/uploads
+public_folder: img/uploads
 
 collections:
   - name: content
