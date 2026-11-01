@@ -82,14 +82,30 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .portrait { position: relative; justify-self: center; width: min(100%, 440px); }
 .portrait .frame { border-radius: 28px; overflow: hidden; background: linear-gradient(180deg, #2b3237, #15191c); aspect-ratio: 4 / 5; max-width: 100%; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.portrait .badge { position: absolute; left: -18px; bottom: 28px; background: var(--surface); border-radius: 16px; padding: 14px 18px; box-shadow: 0 12px 32px rgba(16, 42, 55, .14); display: flex; gap: 12px; align-items: center; }
-.portrait .badge strong { font-family: var(--display); font-size: 1.6rem; color: var(--teal); font-variant-numeric: tabular-nums; }
-.portrait .badge span { font-size: .82rem; color: var(--muted); line-height: 1.3; }
 @media (max-width: 860px) {
   .hero-grid { grid-template-columns: 1fr; }
   .portrait { order: -1; width: min(100%, 360px); }
-  .portrait .badge { left: 12px; }
 }
+
+/* intro: the doctor's name rises in, a teal line fills, then the curtain lifts */
+.intro { position: fixed; inset: 0; z-index: 100; background: var(--ink); color: #fff; display: grid; place-items: center; text-align: center; padding: 24px; transition: transform .8s cubic-bezier(.76, 0, .24, 1); }
+.intro.done { transform: translateY(-100%); }
+.intro .mark { width: 56px; height: 56px; border-radius: 16px; background: var(--teal); display: grid; place-items: center; margin: 0 auto 22px; opacity: 0; transform: scale(.6); animation: pop .5s .1s ease-out forwards; }
+.intro .mark svg { width: 32px; height: 32px; fill: #fff; }
+.intro .name { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 7vw, 4.4rem); letter-spacing: -.02em; line-height: 1.05; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 .28em; }
+.intro .word { display: inline-flex; overflow: hidden; }
+.intro .word span { display: inline-block; transform: translateY(110%); animation: rise-in .7s cubic-bezier(.2, .8, .2, 1) forwards; }
+.intro .name .accent span { color: #7fd3cd; }
+.intro .role { margin-top: 14px; color: #a9c0c8; font-size: .9rem; letter-spacing: .24em; text-transform: uppercase; font-weight: 700; opacity: 0; animation: fade 0.6s 1s forwards; }
+.intro .bar { width: min(240px, 60vw); height: 2px; background: rgba(255,255,255,.15); margin: 26px auto 0; overflow: hidden; border-radius: 2px; }
+.intro .bar i { display: block; height: 100%; width: 0; background: var(--teal); animation: fill 1.8s .2s ease-in-out forwards; }
+.intro .skip { position: absolute; right: max(20px, env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); padding: 9px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); background: transparent; color: #fff; font: 700 .75rem var(--body); letter-spacing: .14em; cursor: pointer; }
+.intro .skip:hover { background: rgba(255,255,255,.1); }
+@keyframes rise-in { to { transform: none; } }
+@keyframes pop { to { opacity: 1; transform: none; } }
+@keyframes fade { to { opacity: 1; } }
+@keyframes fill { to { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .intro { display: none; } }
 @media (max-width: 480px) { .quick { grid-template-columns: 1fr; } }
 
 /* stats band */
@@ -216,6 +232,16 @@ footer a:hover { color: var(--teal); }
   </defs>
 </svg>
 
+<div class="intro" id="intro" aria-hidden="true">
+  <div>
+    <div class="mark"><svg><use href="#i-tooth"/></svg></div>
+    <div class="name" id="intro-name" data-words="Dr.|Mahmoud|Shabaka"></div>
+    <p class="role">Dentist · Mansoura</p>
+    <div class="bar"><i></i></div>
+  </div>
+  <button class="skip" id="intro-skip" type="button">SKIP</button>
+</div>
+
 <div class="topbar">
   <div class="wrap">
     <div class="group">
@@ -271,7 +297,6 @@ footer a:hover { color: var(--teal); }
       </div>
       <div class="portrait">
         <div class="frame"><img src="img/portrait.jpg" alt="Dr. Mahmoud Shabaka in a white clinic jacket" width="513" height="768"></div>
-        <div class="badge"><strong data-key="root_canals">17</strong><span>documented<br>root canal cases</span></div>
       </div>
     </div>
   </div>
@@ -482,6 +507,28 @@ addEventListener("keydown", e => {
   if (e.key === "ArrowRight") openCase(cur + 1);
   if (e.key === "ArrowLeft") openCase(cur - 1);
 });
+
+// intro: build the name letter by letter, then lift the curtain
+(() => {
+  const intro = document.getElementById("intro");
+  const name = document.getElementById("intro-name");
+  let delay = 0.25;
+  name.innerHTML = name.dataset.words.split("|").map((w, wi, all) =>
+    `<span class="word${wi === all.length - 1 ? " accent" : ""}">${[...w].map(ch => {
+      const s = `<span style="animation-delay:${delay.toFixed(2)}s">${ch}</span>`;
+      delay += 0.045;
+      return s;
+    }).join("")}</span>`).join("");
+  let closed = false;
+  const close = () => {
+    if (closed) return;
+    closed = true;
+    intro.classList.add("done");
+    setTimeout(() => intro.remove(), 900);
+  };
+  document.getElementById("intro-skip").onclick = close;
+  setTimeout(close, 2200);
+})();
 
 // mobile menu
 const drawer = document.getElementById("drawer");
