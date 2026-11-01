@@ -1,20 +1,20 @@
 {
   "cases": [
-    { "title": "Root canal treatment", "type": "endo", "note": "Featured case", "image": "/img/case-01.jpg" },
-    { "title": "Root canal treatment", "type": "endo", "note": "With after-healing X-ray", "image": "/img/case-02.jpg" },
-    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "/img/case-03.jpg" },
-    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "/img/case-04.jpg" },
-    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "/img/case-05.jpg" },
-    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "/img/case-06.jpg" },
-    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "/img/case-07.jpg" },
-    { "title": "Multi-tooth caries removal & restoration", "type": "resto", "note": "", "image": "/img/case-08.jpg" },
-    { "title": "Composite restoration", "type": "resto", "note": "", "image": "/img/case-09.jpg" },
-    { "title": "Composite restoration", "type": "resto", "note": "", "image": "/img/case-10.jpg" },
-    { "title": "Composite restoration", "type": "resto", "note": "", "image": "/img/case-11.jpg" },
-    { "title": "Composite restoration", "type": "resto", "note": "", "image": "/img/case-12.jpg" },
-    { "title": "Impacted wisdom tooth surgery", "type": "surgery", "note": "", "image": "/img/case-13.jpg" },
-    { "title": "Surgical extraction", "type": "surgery", "note": "", "image": "/img/case-14.jpg" },
-    { "title": "Surgical extraction", "type": "surgery", "note": "", "image": "/img/case-15.jpg" },
-    { "title": "Surgical extraction", "type": "surgery", "note": "", "image": "/img/case-16.jpg" }
+    { "title": "Root canal treatment", "type": "endo", "note": "Featured case", "image": "img/case-01.jpg" },
+    { "title": "Root canal treatment", "type": "endo", "note": "With after-healing X-ray", "image": "img/case-02.jpg" },
+    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "img/case-03.jpg" },
+    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "img/case-04.jpg" },
+    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "img/case-05.jpg" },
+    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "img/case-06.jpg" },
+    { "title": "Root canal treatment", "type": "endo", "note": "", "image": "img/case-07.jpg" },
+    { "title": "Multi-tooth caries removal & restoration", "type": "resto", "note": "", "image": "img/case-08.jpg" },
+    { "title": "Composite restoration", "type": "resto", "note": "", "image": "img/case-09.jpg" },
+    { "title": "Composite restoration", "type": "resto", "note": "", "image": "img/case-10.jpg" },
+    { "title": "Composite restoration", "type": "resto", "note": "", "image": "img/case-11.jpg" },
+    { "title": "Composite restoration", "type": "resto", "note": "", "image": "img/case-12.jpg" },
+    { "title": "Impacted wisdom tooth surgery", "type": "surgery", "note": "", "image": "img/case-13.jpg" },
+    { "title": "Surgical extraction", "type": "surgery", "note": "", "image": "img/case-14.jpg" },
+    { "title": "Surgical extraction", "type": "surgery", "note": "", "image": "img/case-15.jpg" },
+    { "title": "Surgical extraction", "type": "surgery", "note": "", "image": "img/case-16.jpg" }
   ]
 }
